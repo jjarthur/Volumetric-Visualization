@@ -15,9 +15,21 @@ public class CollapseWindow : MonoBehaviour {
 		
 	}
 
-    public void Toggle()
+    public void VisualizeToggle()
     {
-        if (GameObject.Find("ContentToggle").GetComponent<Toggle>().isOn) 
+        if (GameObject.Find("VisualizeContentToggle").GetComponent<Toggle>().isOn)
+        {
+            gameObject.SetActive(true);
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
+    public void StatisticsToggle()
+    {
+        if (GameObject.Find("StatisticsContentToggle").GetComponent<Toggle>().isOn)
         {
             gameObject.SetActive(true);
         }
