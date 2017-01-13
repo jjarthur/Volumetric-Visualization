@@ -7,12 +7,12 @@ public class RayMarching : MonoBehaviour
 {
 	[SerializeField]
 	[Header("Render in a lower resolution to increase performance.")]
-	private int downscale = 2;
+	private int downscale = 1;
 	[SerializeField]
 	private LayerMask volumeLayer;
 
-	[SerializeField][Range(0, 20)]
-	private float _depthBlend = 20;
+	[SerializeField][Range(0, 10)]
+	private float _depthBlend = 10;
 
 	[SerializeField]
 	private Shader compositeShader;
@@ -36,7 +36,7 @@ public class RayMarching : MonoBehaviour
 	[Header("Drag all the textures in here")]
 	[SerializeField]
 	private Texture2D[] slices;
-	[SerializeField][Range(0, 2)]
+	[SerializeField][Range(0, 1)]
 	private float opacity = 1;
 	[Header("Volume texture size. These must be a power of 2")]
 	[SerializeField]
@@ -235,6 +235,16 @@ public class RayMarching : MonoBehaviour
     public void SetOpacity(float o)
     {
         opacity = o;
+    }
+
+    public void SetDepthBlend(float d)
+    {
+        _depthBlend = d;
+    }
+
+    public void SetDownScale(float d)
+    {
+        downscale = (int)d;
     }
 
     [ContextMenu("Sort Slices by Name")]
