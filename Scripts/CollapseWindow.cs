@@ -5,16 +5,6 @@ using UnityEngine.UI;
 
 public class CollapseWindow : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
     public void VisualizeToggle()
     {
         if (GameObject.Find("VisualizeContentToggle").GetComponent<Toggle>().isOn)

@@ -11,8 +11,8 @@ public class RayMarching : MonoBehaviour
 	[SerializeField]
 	private LayerMask volumeLayer;
 
-	[SerializeField][Range(0, 10)]
-	private float _depthBlend = 10;
+	[SerializeField][Range(0, 2)]
+	private float _depthBlend = 2;
 
 	[SerializeField]
 	private Shader compositeShader;
