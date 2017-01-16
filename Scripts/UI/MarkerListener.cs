@@ -5,19 +5,13 @@ using UnityEngine.UI;
 
 public class MarkerListener : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-
     public void SetMarker(float value)
     {
-
-        print(GameObject.Find("ZSlider").GetComponent<Slider>().value);
+        const int WorldPos = 200; //Accounts for relative position in world space
+        
+        //Get value of Z Slider from visualization window
         float newY = GameObject.Find("ZSlider").GetComponent<Slider>().value*4;
-
-        Vector3 markerPos = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + newY, gameObject.transform.position.z);
-
-        gameObject.transform.position = markerPos;
+        //Set marker transform to a new vector with adjusted depth value
+        gameObject.transform.localPosition = new Vector3(gameObject.transform.localPosition.x, newY - WorldPos, gameObject.transform.localPosition.z);
     }
 }
