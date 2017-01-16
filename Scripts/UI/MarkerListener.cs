@@ -13,5 +13,7 @@ public class MarkerListener : MonoBehaviour {
         float newY = GameObject.Find("ZSlider").GetComponent<Slider>().value*4;
         //Set marker transform to a new vector with adjusted depth value
         gameObject.transform.localPosition = new Vector3(gameObject.transform.localPosition.x, newY - WorldPos, gameObject.transform.localPosition.z);
+
+        gameObject.GetComponentInChildren<Text>().text = System.Math.Round(newY/4, 1).ToString() + "%";
     }
 }
