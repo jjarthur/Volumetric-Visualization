@@ -28,4 +28,16 @@ public class CollapseWindow : MonoBehaviour {
             gameObject.SetActive(false);
         }
     }
+
+    public void SliceMapToggle()
+    {
+        if (GameObject.Find("SliceMapContentToggle").GetComponent<Toggle>().isOn)
+        {
+            gameObject.SetActive(true);
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
+    }
 }

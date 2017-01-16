@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class VolumeSlicer : MonoBehaviour
 {
     // create a Dictionary with a key of type int and a value of type Ray Marching script
-    public Dictionary<int, RayMarching> rayMarchingDictionary = new Dictionary<int, RayMarching>();
-    public Dropdown selected;
+    private Dictionary<int, RayMarching> rayMarchingDictionary = new Dictionary<int, RayMarching>();
+    private Dropdown selected;
 
     void Start()
     {
@@ -73,6 +73,17 @@ public class VolumeSlicer : MonoBehaviour
         {
             script.Value.SetClipDimensionsZ(z);
         }
+
+
+        GameObject marker = GameObject.Find("Marker");
+
+        print(GameObject.Find("ZValueText").GetComponent<Text>().text);
+        float newY = GameObject.Find("ZSlider").GetComponent<Slider>().value;
+        
+        Vector3 markerPos = new Vector3(marker.transform.position.x, 210F + 100 - newY, marker.transform.position.z);
+
+        GameObject.Find("Marker").transform.position = markerPos;
+
     }
 
     public void SetOpacity(float o)
