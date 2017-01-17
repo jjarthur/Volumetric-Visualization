@@ -11,16 +11,21 @@ public class RotateObject : MonoBehaviour
         {
             float rotationZ = Input.GetAxis("Mouse X") * rotationSpeed * Mathf.Deg2Rad;
 
-            transform.Rotate(Vector3.forward, -rotationZ);
+            transform.Rotate(Vector3.forward, rotationZ);
+        }
+        else if (Input.GetKey(KeyCode.LeftControl))
+        {
+            float rotationZ = Input.GetAxis("Mouse Y") * rotationSpeed * Mathf.Deg2Rad;
+
+            transform.Rotate(Vector3.right, rotationZ);
         }
         else
         {
             float rotationX = Input.GetAxis("Mouse X") * rotationSpeed * Mathf.Deg2Rad;
             float rotationY = Input.GetAxis("Mouse Y") * rotationSpeed * Mathf.Deg2Rad;
 
-            transform.Rotate(Vector3.up, -rotationX);
-            transform.Rotate(Vector3.right, -rotationY);
-
+            transform.Rotate(Vector3.up, rotationX);
+            transform.Rotate(Vector3.right, rotationY);
         }
     }
 }
