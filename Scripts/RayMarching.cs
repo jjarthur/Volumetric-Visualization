@@ -9,25 +9,25 @@ public class RayMarching : MonoBehaviour
 	[Header("Render in a lower resolution to increase performance.")]
 	private int downscale = 1;
 	[SerializeField]
-	private LayerMask volumeLayer;
+	private LayerMask volumeLayer = -1;
 
 	[SerializeField][Range(0, 2)]
 	private float _depthBlend = 2;
 
 	[SerializeField]
-	private Shader compositeShader;
+	private Shader compositeShader = null;
 
 	[SerializeField]
-	private Shader renderFrontDepthShader;
+	private Shader renderFrontDepthShader = null;
 	[SerializeField]
-	private Shader renderBackDepthShader;
+	private Shader renderBackDepthShader = null;
 	[SerializeField]
-	private Shader rayMarchShader;
+	private Shader rayMarchShader = null;
 
 	[SerializeField]
-	private Shader renderFrontPosShader;
+	private Shader renderFrontPosShader = null;
 	[SerializeField]
-	private Shader renderBackPosShader;
+	private Shader renderBackPosShader = null;
 
 	[SerializeField][Header("Remove all the darker colors")]
 	private bool increaseVisiblity = false;
@@ -35,7 +35,7 @@ public class RayMarching : MonoBehaviour
 
 	[Header("Drag all the textures in here")]
 	[SerializeField]
-	private Texture2D[] slices;
+	private Texture2D[] slices = null;
 	[SerializeField][Range(0, 1)]
 	private float opacity = 1;
 	[Header("Volume texture size. These must be a power of 2")]
@@ -78,9 +78,9 @@ public class RayMarching : MonoBehaviour
 	}
 
 	[SerializeField]
-	private Transform clipPlane;
+	private Transform clipPlane = null;
 	[SerializeField]
-	private Transform cubeTarget;
+	private Transform cubeTarget = null;
 	
 	private void OnRenderImage(RenderTexture source, RenderTexture destination)
 	{

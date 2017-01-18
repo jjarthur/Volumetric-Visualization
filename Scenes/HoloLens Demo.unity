@@ -1475,7 +1475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RecognizerStart: 0
   KeywordsAndResponses:
-  - Keyword: Down
+  - Keyword: Slice Down
     KeyCode: 45
     Response:
       m_PersistentCalls:
@@ -1493,7 +1493,7 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-  - Keyword: Up
+  - Keyword: Slice Up
     KeyCode: 61
     Response:
       m_PersistentCalls:
