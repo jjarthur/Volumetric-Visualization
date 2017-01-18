@@ -12,8 +12,8 @@ public class Screenshot : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        screenCap = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false); // 1
-        border = new Texture2D(2, 2, TextureFormat.ARGB32, false); // 2
+        screenCap = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false); 
+        border = new Texture2D(2, 2, TextureFormat.ARGB32, false); 
         border.Apply();
     }
 
@@ -21,9 +21,8 @@ public class Screenshot : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.K))
-        { // 3
-            StartCoroutine("Capture");
-            //Capture();
+        { 
+            StartCoroutine(Capture());
         }
     }
 
@@ -50,7 +49,6 @@ public class Screenshot : MonoBehaviour
 
         // Encode texture into PNG
         byte[] bytes = screenCap.EncodeToPNG();
-        //Object.Destroy(screenCap);
 
         string filename = fileName();
         string path = Application.dataPath + "/Screenshots/" + filename;
