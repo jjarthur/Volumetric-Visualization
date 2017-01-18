@@ -12,12 +12,25 @@ public class VolumeSlicer : MonoBehaviour
     void Start()
     {
         GameObject myObject = GameObject.Find("VolumeDropdown");
-        selected = myObject.GetComponent<Dropdown>();
-        selected.onValueChanged.AddListener(delegate {
-            SelectedChangedHandler(selected);
-        });
+        if (myObject != null)
+        {
+            selected = myObject.GetComponent<Dropdown>();
+            selected.onValueChanged.AddListener(delegate {
+                SelectedChangedHandler(selected);
+            });
 
-        SelectedChangedHandler(selected);
+            SelectedChangedHandler(selected);
+        }
+        // When there is no visualization window (HoloLens)
+        else 
+        {
+            // Get all the RayMarching scripts on this GameObject
+            RayMarching[] rayMarchingScripts = GetComponent<Camera>().GetComponents<RayMarching>();
+            foreach (RayMarching script in rayMarchingScripts)
+            {
+                rayMarchingDictionary.Add(script.ScriptId, script);
+            }
+        }
     }
 
     void Destroy()
@@ -25,6 +38,7 @@ public class VolumeSlicer : MonoBehaviour
         selected.onValueChanged.RemoveAllListeners();
     }
 
+    // Finds the selected volume
     public void SelectedChangedHandler(Dropdown selected)
     {
         rayMarchingDictionary.Clear();
@@ -32,7 +46,7 @@ public class VolumeSlicer : MonoBehaviour
         // Get all the RayMarching scripts on this GameObject
         RayMarching[] rayMarchingScripts = GetComponent<Camera>().GetComponents<RayMarching>();
 
-        //When "All" volumes are selected
+        // When "All" volumes are selected
         if (selected.value == 0) {
             // Loop through all RayMarching scripts and add an entry into the Dictionary
             // which allows us to store each Ray Marching script for each unique ScriptId
