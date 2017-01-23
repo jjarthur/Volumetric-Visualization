@@ -2261,7 +2261,7 @@ MonoBehaviour:
   renderBackPosShader: {fileID: 4800000, guid: 04fc9ecc17f8119488009bdd0afb7338, type: 3}
   increaseVisiblity: 1
   slices:
-  - {fileID: 2800000, guid: 3d32fafa996b79f478bb59c01f4a3406, type: 3}
+  - {fileID: 2800000, guid: 951e576d44594eb409e11b15a249a366, type: 3}
   opacity: 1
   volumeWidth: 1
   volumeHeight: 1
