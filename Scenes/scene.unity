@@ -2123,6 +2123,7 @@ GameObject:
   - component: {fileID: 712179815}
   - component: {fileID: 712179814}
   - component: {fileID: 712179822}
+  - component: {fileID: 712179826}
   - component: {fileID: 712179823}
   - component: {fileID: 712179824}
   - component: {fileID: 712179820}
@@ -3021,6 +3022,17 @@ MonoBehaviour:
   clipDimensions: {x: 99, y: 99, z: 99, w: 1}
   clipPlane: {fileID: 999975928}
   cubeTarget: {fileID: 1980090531}
+--- !u!114 &712179826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 712179813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 547c541203126fc4fa65e8a1a75378b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &742326256
 GameObject:
   m_ObjectHideFlags: 0
