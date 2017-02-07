@@ -7,11 +7,14 @@ public class VolumeSlicer : MonoBehaviour
 {
     // create a Dictionary with a key of type int and a value of type Ray Marching script
     private Dictionary<int, RayMarching> rayMarchingDictionary = new Dictionary<int, RayMarching>();
+    private GameObject volumeValueText;
     private Dropdown selected;
 
     void Start()
     {
         GameObject myObject = GameObject.Find("VolumeDropdown");
+        volumeValueText = GameObject.Find("VolumeValueText");
+
         if (myObject != null)
         {
             selected = myObject.GetComponent<Dropdown>();
@@ -42,6 +45,9 @@ public class VolumeSlicer : MonoBehaviour
     public void SelectedChangedHandler(Dropdown selected)
     {
         rayMarchingDictionary.Clear();
+
+        // Set volume text in statistics GUI
+        volumeValueText.GetComponent<Text>().text = selected.options[selected.value].text;
 
         // Get all the RayMarching scripts on this GameObject
         RayMarching[] rayMarchingScripts = GetComponent<Camera>().GetComponents<RayMarching>();

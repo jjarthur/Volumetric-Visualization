@@ -11,9 +11,6 @@ public class RayMarching : MonoBehaviour
 	[SerializeField]
 	private LayerMask volumeLayer;
 
-	[SerializeField][Range(0, 2)]
-	private float _depthBlend = 2;
-
 	[SerializeField]
 	private Shader compositeShader;
 
@@ -57,8 +54,9 @@ public class RayMarching : MonoBehaviour
 	private Texture3D _volumeBuffer;
     private static int _scriptCounter;
     private int _scriptId;
+    private float _depthBlend = 2;
 
-	private void Awake()
+    private void Awake()
 	{
 		_rayMarchMaterial = new Material(rayMarchShader);
 		_compositeMaterial = new Material(compositeShader);
