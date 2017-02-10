@@ -14,6 +14,13 @@ Unity assets for Volumetric rendering using open source library at https://githu
 7. In the list of attached components, locate the SECOND Ray Marching script and expand the "Slices" field. Ensure the size is set to 0, then drag and drop all .TIF slices into the field.
 8. Make sure the component is enabled, then press play.
 
+## Steps to change volumes
+1. Follow steps 3 and 4 from above to import a new data set into Unity.
+2. Select the Main Camera in the hierarchy and click the lock button in the top right above the Inspector panel.
+3. In the list of attached components, find the script containing the volume you wish to remove and set the size of the slice array to 0.
+4. Drag and drop all .TIF slices from the newly imported data set into the field.
+5. Make sure the component is enabled, then press play.
+
 ## Script list
 - RayMarching.cs: Handles the main visualization operations.
 - SliceMesh.cs: Assists RayMarching.cs with volume visualization.
@@ -38,3 +45,5 @@ Unity assets for Volumetric rendering using open source library at https://githu
 - The first volume rendered has a strange bug where the X axis rotation is inverted and the Y position moves with the camera angle. This is why the first RayMarching component is added with a blank slice.
 - 256x256x128 is a good volume resolution for general use as it has a relatively short load time and isn't too pixelated.
 - The Volume number in the GUI dropdown refers to the nth Ray Marching component on the Main Camera.
+- Rendering more volumes increases the rendering cost.
+- Script order matters. Place the script that you want to be rendered last after the rest.
