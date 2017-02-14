@@ -1,8 +1,14 @@
-*.tif
-*.tif.meta
-HoloToolkit/
 Screenshots/
 C155-3 Slices.meta
 Coke Slices.meta
 Microglia Slices.meta
 Sample MRI.meta
+App/
+Volumetric Visualization.Editor.csproj
+Volumetric Visualization.csproj
+Volumetric Visualization.sln
+Volumetric Visualization.userprefs
+Library/
+Temp/
+Assets/Coke Slices/
+Assets/Microglia Slices/
