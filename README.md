@@ -65,7 +65,6 @@ Unity assets for Volumetric rendering using open source library at https://githu
 - Script order matters. Place the script that you want to be rendered last after the rest.
 
 ## TO DO list:
-- Click and drag to move volume position.
-- Slicing UI sliders to follow player teleports.
 - ‘Reset’ button to set objects and player location back to original positions.
-- Make teleport function more intuitive and easier to use.
+- Add support for any number of volumes.
+- Allow zooming with mouse wheel.
