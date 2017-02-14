@@ -1,6 +1,14 @@
 # Volumetric-Visualization
 Unity assets for Volumetric rendering using open source library at https://github.com/brianasu/unity-ray-marching
 
+## Controls
+- WSAD move camera position.
+- Right click + drag to adjust camera angle.
+- Left click + drag volume to rotate.
+- Shift + left click + drag volume to rotate the forward rotation.
+- Ctrl + left click + drag volume to rotate on the right rotation.
+- K to screenshot.
+
 ## Steps to run from scratch
 1. Create a new blank project in Unity.
 2. Unzip Volumetric Visualization and import all files and folders into the new project's "Assets" folder.
@@ -18,8 +26,16 @@ Unity assets for Volumetric rendering using open source library at https://githu
 1. Follow steps 3 and 4 from above to import a new data set into Unity.
 2. Select the Main Camera in the hierarchy and click the lock button in the top right above the Inspector panel.
 3. In the list of attached components, find the script containing the volume you wish to remove and set the size of the slice array to 0.
+  - If you want to add an additional volumes without removing existing ones, click the settings gear of an existing script then copy and paste as new.
 4. Drag and drop all .TIF slices from the newly imported data set into the field.
 5. Make sure the component is enabled, then press play.
+
+## Steps to deploy build
+1. Go to File -> Build Settings.
+2. Select "PC, Max & Linux Standalone" and click "Add Open Scenes".
+3. Select target platform and set Architecture to "x86".
+4. Leave check boxes unchecked and click Build.
+5. Name the executable and save it in a new folder.
 
 ## Script list
 - RayMarching.cs: Handles the main visualization operations.
@@ -47,3 +63,9 @@ Unity assets for Volumetric rendering using open source library at https://githu
 - The Volume number in the GUI dropdown refers to the nth Ray Marching component on the Main Camera.
 - Rendering more volumes increases the rendering cost.
 - Script order matters. Place the script that you want to be rendered last after the rest.
+
+## TO DO list:
+- Click and drag to move volume position.
+- Slicing UI sliders to follow player teleports.
+- ‘Reset’ button to set objects and player location back to original positions.
+- Make teleport function more intuitive and easier to use.

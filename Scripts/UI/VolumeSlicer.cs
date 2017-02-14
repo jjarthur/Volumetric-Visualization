@@ -29,9 +29,9 @@ public class VolumeSlicer : MonoBehaviour
         {
             // Get all the RayMarching scripts on this GameObject
             RayMarching[] rayMarchingScripts = GetComponent<Camera>().GetComponents<RayMarching>();
-            foreach (RayMarching script in rayMarchingScripts)
+            for (int i = 1; i < rayMarchingScripts.Length; i++) // Skip first index to avoid dummy script
             {
-                rayMarchingDictionary.Add(script.ScriptId, script);
+                rayMarchingDictionary.Add(rayMarchingScripts[i].ScriptId, rayMarchingScripts[i]);
             }
         }
     }
@@ -56,14 +56,14 @@ public class VolumeSlicer : MonoBehaviour
         if (selected.value == 0) {
             // Loop through all RayMarching scripts and add an entry into the Dictionary
             // which allows us to store each Ray Marching script for each unique ScriptId
-            foreach (RayMarching script in rayMarchingScripts)
+            for (int i = 1; i < rayMarchingScripts.Length; i++) // Skip first index to avoid dummy script
             {
-                rayMarchingDictionary.Add(script.ScriptId, script);
+                rayMarchingDictionary.Add(rayMarchingScripts[i].ScriptId, rayMarchingScripts[i]);
             }
         }
-        else if (rayMarchingScripts.Length >= selected.value)
+        else if (rayMarchingScripts.Length > selected.value)
         {
-            rayMarchingDictionary.Add(rayMarchingScripts[selected.value-1].ScriptId, rayMarchingScripts[selected.value-1]);
+            rayMarchingDictionary.Add(rayMarchingScripts[selected.value].ScriptId, rayMarchingScripts[selected.value]);
         }
         else
         {
