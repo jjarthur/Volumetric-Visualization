@@ -1,0 +1,1 @@
+This is the folder that screenshots taken in the application are kept.
