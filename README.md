@@ -10,13 +10,14 @@ Unity assets for Volumetric rendering using open source library at https://githu
 - K to screenshot.
 
 ## Steps to run from scratch
-1. Create a new blank project in Unity.
-2. Unzip Volumetric Visualization and import all files and folders into the new project's "Assets" folder.
-3. Import .TIF volume slices into a new folder within the Assets folder.
+1. Create a new blank 3D project in Unity.
+2. Unzip Volumetric Visualization and import all files and folders from the "Assets" backup folder into the new project's "Assets" folder.
+3. Import .TIF volume slices and files into a new folder within the Assets folder.
 4. Inside Unity, select all the volume slices.
-  1. Check "Read/Write Enabled".
-  2. Uncheck "Generate Mit Maps".
-  3. Change "Filter Mode" to "Point (no filter)".
+  1. Expand "Advanced" tab.
+  2. Check "Read/Write Enabled".
+  3. Uncheck "Generate Mit Maps".
+  4. Change "Filter Mode" to "Point (no filter)".
 5. Open "scene" located in "Scenes" folder.
 6. Select the Main Camera in the hierarchy and click the lock button in the top right above the Inspector panel.
 7. In the list of attached components, locate the SECOND Ray Marching script and expand the "Slices" field. Ensure the size is set to 0, then drag and drop all .TIF slices into the field.
@@ -68,3 +69,4 @@ Unity assets for Volumetric rendering using open source library at https://githu
 - ‘Reset’ button to set objects and player location back to original positions.
 - Add support for any number of volumes.
 - Allow zooming with mouse wheel.
+- Allow slicing from both directions.
