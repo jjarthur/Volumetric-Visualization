@@ -1,5 +1,5 @@
 # Volumetric-Visualization
-Unity assets for Volumetric rendering using open source library at https://github.com/brianasu/unity-ray-marching
+Unity assets for Volumetric rendering using open source library at https://github.com/brianasu/unity-ray-marching/tree/volumetric-textures-depth
 
 ## Controls
 - WSAD move camera position.
@@ -7,7 +7,7 @@ Unity assets for Volumetric rendering using open source library at https://githu
 - Left click + drag volume to rotate.
 - Shift + left click + drag volume to rotate the forward rotation.
 - Ctrl + left click + drag volume to rotate on the right rotation.
-- K to screenshot.
+- K to screenshot (see 'Other notes' for more information).
 
 ## Steps to run from scratch
 1. Create a new blank 3D project in Unity.
@@ -27,7 +27,7 @@ Unity assets for Volumetric rendering using open source library at https://githu
 1. Follow steps 3 and 4 from above to import a new data set into Unity.
 2. Select the Main Camera in the hierarchy and click the lock button in the top right above the Inspector panel.
 3. In the list of attached components, find the script containing the volume you wish to remove and set the size of the slice array to 0.
-  - If you want to add an additional volumes without removing existing ones, click the settings gear of an existing script then copy and paste as new.
+  - If you want to add an additional volume without removing existing ones, click the settings gear of an existing script then copy and paste as new.
 4. Drag and drop all .TIF slices from the newly imported data set into the field.
 5. Make sure the component is enabled, then press play.
 
@@ -64,9 +64,10 @@ Unity assets for Volumetric rendering using open source library at https://githu
 - The Volume number in the GUI dropdown refers to the nth Ray Marching component on the Main Camera.
 - Rendering more volumes increases the rendering cost.
 - Script order matters. Place the script that you want to be rendered last after the rest.
+- In order to take a screenshot in a deployed build, a 'Screenshots' folder must be created in the same directory as the executable.
 
 ## TO DO list:
 - ‘Reset’ button to set objects and player location back to original positions.
 - Add support for any number of volumes.
 - Allow zooming with mouse wheel.
-- Allow slicing from both directions.
+- Allow slicing from both directions on each plane.
